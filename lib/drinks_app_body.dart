@@ -94,8 +94,8 @@ class _DrinksPageBodyState extends State<DrinksPageBody> {
                   color: Colors.white,
                   boxShadow: [
                     BoxShadow(
-                      color: Color(0xFFe8e8),
-                      // blurRadius: 5.0,
+                      color:Color.fromARGB(255, 221, 218, 218),
+                      blurRadius: 5.0,
                       offset: Offset(0, 5),
                     )
                   ]
