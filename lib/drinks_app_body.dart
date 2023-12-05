@@ -1,3 +1,4 @@
+import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_app/colours.dart';
 import 'package:mobile_app/widgets/big_text.dart';
@@ -33,14 +34,30 @@ class _DrinksPageBodyState extends State<DrinksPageBody> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 320,
-      child: PageView.builder(
-          controller: pageController,
-          itemCount: 5,
-          itemBuilder: (context, position) {
-            return _buildPageItem(position);
-          }),
+    return Column(
+      children: [
+        Container(
+          height: 320,
+          child: PageView.builder(
+              controller: pageController,
+              itemCount: 5,
+              itemBuilder: (context, position) {
+                return _buildPageItem(position);
+              }),
+        ),
+         new DotsIndicator(
+            dotsCount: 5,
+            position: _curPageVal,
+            decorator: DotsDecorator(
+              size: const Size.square(9.0),
+              activeSize: const Size(18.0, 9.0),
+              activeShape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(5.0),
+              ),
+              activeColor: AppColors.mainColor,
+            ),
+          )
+      ],
     );
   }
     
@@ -94,7 +111,7 @@ class _DrinksPageBodyState extends State<DrinksPageBody> {
                   color: Colors.white,
                   boxShadow: [
                     BoxShadow(
-                      color:Color.fromARGB(255, 221, 218, 218),
+                      color:Color(0xFFe8e8e8),
                       blurRadius: 5.0,
                       offset: Offset(0, 5),
                     )
@@ -110,6 +127,7 @@ class _DrinksPageBodyState extends State<DrinksPageBody> {
                         height: 10,
                       ),
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Wrap(
                             children: List.generate(
@@ -138,6 +156,7 @@ class _DrinksPageBodyState extends State<DrinksPageBody> {
                         height: 20,
                       ),
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           IconAndText(
                               icon: Icons.circle_sharp,
