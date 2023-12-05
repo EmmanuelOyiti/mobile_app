@@ -1,6 +1,7 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_app/colours.dart';
+import 'package:mobile_app/utils/dimensions.dart';
 import 'package:mobile_app/widgets/big_text.dart';
 import 'package:mobile_app/widgets/icon_n_text.dart';
 import 'package:mobile_app/widgets/small_text.dart';
@@ -16,7 +17,7 @@ class _DrinksPageBodyState extends State<DrinksPageBody> {
   PageController pageController = PageController(viewportFraction: 0.85);
   var _curPageVal = 0.0;
   double _scaleFactor = 0.8;
-  double _height =220;
+  double _height = Dimensions.pageViewContainer;
   @override
   void initState() {
     super.initState();
@@ -37,7 +38,7 @@ class _DrinksPageBodyState extends State<DrinksPageBody> {
     return Column(
       children: [
         Container(
-          height: 320,
+          height:  Dimensions.pageView,
           child: PageView.builder(
               controller: pageController,
               itemCount: 5,
@@ -92,7 +93,7 @@ class _DrinksPageBodyState extends State<DrinksPageBody> {
         child: Stack(
           children: [
             Container(
-              height: 220,
+              height: Dimensions.pageViewContainer,
               margin: EdgeInsets.only(left: 10, right: 10),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30),
@@ -104,7 +105,7 @@ class _DrinksPageBodyState extends State<DrinksPageBody> {
             Align(
               alignment: Alignment.bottomCenter,
               child: Container(
-                height: 120,
+                height:  Dimensions.pageViewTextContainer,
                 margin: EdgeInsets.only(left: 30, right: 30, bottom: 30),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
@@ -124,7 +125,7 @@ class _DrinksPageBodyState extends State<DrinksPageBody> {
                     children: [
                       BigText(text: "Our Drink"),
                       SizedBox(
-                        height: 10,
+                        height: Dimensions.height10,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -153,7 +154,7 @@ class _DrinksPageBodyState extends State<DrinksPageBody> {
                         ],
                       ),
                       SizedBox(
-                        height: 20,
+                        height: Dimensions.height20,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,

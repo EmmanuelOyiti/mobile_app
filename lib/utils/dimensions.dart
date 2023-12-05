@@ -10,26 +10,26 @@ class Dimensions {
 
 //margin and padding
   static double height10 = scrnHeight / 73.1;
-  static double height20 = scrnHeight / 36.6;
+  static double height20 = scrnHeight / 36.55;
   static double height15 = scrnHeight / 48.7;
   static double height30 = scrnHeight / 28.1;
   static double height45 = scrnHeight / 16.4;
 
   static double width10 = scrnHeight / 73.1;
-  static double width20 = scrnHeight / 36.6;
+  static double width20 = scrnHeight / 36.55;
   static double width15 = scrnHeight / 48.7;
   static double width30 = scrnHeight / 28.1;
   static double width45 = scrnHeight / 16.4;
 
   static double font26 = scrnHeight / 28.11;
-  static double font20 = scrnHeight / 36.6;
+  static double font20 = scrnHeight / 36.55;
   static double font16 = scrnHeight / 45.69;
 
   static double margin30 = scrnHeight / 28.1;
   static double margin45 = scrnHeight / 16.4;
 
   //radius
-  static double radius20 = scrnHeight / 36.6;
+  static double radius20 = scrnHeight / 36.55;
   static double radius30 = scrnHeight / 28.1;
   static double radius15 = scrnHeight / 48.7;
 
