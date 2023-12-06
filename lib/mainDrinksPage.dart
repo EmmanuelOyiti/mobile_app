@@ -53,7 +53,10 @@ class _MainDrinkPageState extends State<MainDrinkPage> {
             ),
           ),
         ),      
-        DrinksPageBody(),
+        Expanded(
+          child:SingleChildScrollView(
+            child:  DrinksPageBody(),
+          )),
         ],
     ));
   }
