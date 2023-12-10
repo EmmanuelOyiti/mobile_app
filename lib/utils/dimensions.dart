@@ -24,6 +24,7 @@ class Dimensions {
   static double font26 = scrnHeight / 28.11;
   static double font20 = scrnHeight / 36.55;
   static double font16 = scrnHeight / 45.69;
+  static double font12 = scrnHeight / 58.07;
 
   static double margin30 = scrnHeight / 28.1;
   static double margin45 = scrnHeight / 16.4;

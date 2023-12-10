@@ -60,12 +60,12 @@ class _DrinksPageBodyState extends State<DrinksPageBody> {
         ),
         // popular Text
         SizedBox(
-          height: Dimensions.height30,
+          height: Dimensions.height20,
         ),
         Container(
           margin: EdgeInsets.only(left: Dimensions.width30),
           child: Row(
-            mainAxisSize: MainAxisSize.min,
+            // mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               BigText(text: "Recommended"),
@@ -88,6 +88,9 @@ class _DrinksPageBodyState extends State<DrinksPageBody> {
               )
             ],
           ),
+        ),
+     SizedBox(
+          height: Dimensions.height20,
         ),
         Container(
           height: 900,
