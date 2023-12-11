@@ -35,129 +35,135 @@ class _DrinksPageBodyState extends State<DrinksPageBody> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return ListView(
       children: [
-        Container(
-          height: Dimensions.pageView,
-          child: PageView.builder(
-              controller: pageController,
-              itemCount: 5,
-              itemBuilder: (context, position) {
-                return _buildPageItem(position);
-              }),
-        ),
-        new DotsIndicator(
-          dotsCount: 5,
-          position: _curPageVal,
-          decorator: DotsDecorator(
-            size: const Size.square(9.0),
-            activeSize: const Size(18.0, 9.0),
-            activeShape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(5.0),
-            ),
-            activeColor: AppColors.mainColor,
-          ),
-        ),
-        // popular Text
-        SizedBox(
-          height: Dimensions.height20,
-        ),
-        Container(
-          margin: EdgeInsets.only(left: Dimensions.width30),
-          child: Row(
-            // mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.end,
+        ClipRect(
+          child: Column(
             children: [
-              BigText(text: "Recommended"),
-              SizedBox(
-                width: Dimensions.width10,
-              ),
               Container(
-                margin: const EdgeInsets.only(bottom: 3),
-                child: BigText(
-                  text: ".",
-                  color: Colors.black26,
+                height: Dimensions.pageView,
+                child: PageView.builder(
+                    controller: pageController,
+                    itemCount: 5,
+                    itemBuilder: (context, position) {
+                      return _buildPageItem(position);
+                    }),
+              ),
+              new DotsIndicator(
+                dotsCount: 5,
+                position: _curPageVal,
+                decorator: DotsDecorator(
+                  size: const Size.square(9.0),
+                  activeSize: const Size(18.0, 9.0),
+                  activeShape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5.0),
+                  ),
+                  activeColor: AppColors.mainColor,
                 ),
               ),
+              // popular Text
               SizedBox(
-                width: Dimensions.width10,
+                height: Dimensions.height20,
               ),
               Container(
-                margin: const EdgeInsets.only(bottom: 2),
-                child: SmallText(text: "Customer Favourites "),
+                margin: EdgeInsets.only(left: Dimensions.width30),
+                child: Row(
+                  // mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    BigText(text: "Recommended"),
+                    SizedBox(
+                      width: Dimensions.width10,
+                    ),
+                    Container(
+                      margin: const EdgeInsets.only(bottom: 3),
+                      child: BigText(
+                        text: ".",
+                        color: Colors.black26,
+                      ),
+                    ),
+                    SizedBox(
+                      width: Dimensions.width10,
+                    ),
+                    Container(
+                      margin: const EdgeInsets.only(bottom: 2),
+                      child: SmallText(text: "Customer Favourites "),
+                    )
+                  ],
+                ),
+              ),
+           SizedBox(
+                height: Dimensions.height20,
+              ),
+              Container(
+                height: 900,
+                child: ListView.builder(
+                physics: NeverScrollableScrollPhysics(),
+                // shrinkWrap: true,  
+                itemCount: 8,
+                itemBuilder: (context, index) {
+                return Container(
+                  margin: EdgeInsets.only(
+                      left: Dimensions.width20, right: Dimensions.width20, bottom: Dimensions.height10),
+                  child: Row(
+                    children: [
+                      Container(
+                        width: Dimensions.listViewImgSize,
+                        height: Dimensions.listViewTextContSize,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(Dimensions.radius20),
+                            color: Colors.white38,
+                            image: DecorationImage(
+                              fit: BoxFit.cover,
+                                image: AssetImage("assets/image/food0.png"))),
+                      ),
+                      // text container
+                      Expanded(
+                        child: Container(
+                          height: Dimensions.listViewTextContSize,
+                          decoration: BoxDecoration(borderRadius: BorderRadius.only(topRight: Radius.circular(Dimensions.radius20),
+                          bottomRight: Radius.circular(Dimensions.radius20)),
+                          color: Colors.white),
+                          child: Padding(padding: EdgeInsets.only(left: Dimensions.width10, right: Dimensions.width10),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        mainAxisSize: MainAxisSize.min,
+                            children: [
+                              BigText(text: "Sparkling Drink From Ghana"),
+                              SizedBox(height: Dimensions.height10,),
+                              SmallText(text: "With a Ghanaian taste"),
+                              SizedBox(height: Dimensions.height10,),
+                               Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              IconAndText(
+                                  icon: Icons.circle_sharp,
+                                  text: "Normal",
+                                  iconColor: AppColors.iconColor1),
+                              IconAndText(
+                                  icon: Icons.location_on,
+                                  text: "1.7",
+                                  iconColor: AppColors.mainColor),
+                              IconAndText(
+                                  icon: Icons.access_time_filled_rounded,
+                                  text: "32mins",
+                                  iconColor: AppColors.iconColor2),
+                            ],
+                          )
+                       
+                            ],
+                          ),),
+                        ),
+                      ),
+                    ],
+                  ),
+                );
+              }),
               )
             ],
           ),
         ),
-     SizedBox(
-          height: Dimensions.height20,
-        ),
-        Container(
-          height: 900,
-          child: ListView.builder(
-          physics: NeverScrollableScrollPhysics(),
-          // shrinkWrap: true,  
-          itemCount: 8,
-          itemBuilder: (context, index) {
-          return Container(
-            margin: EdgeInsets.only(
-                left: Dimensions.width20, right: Dimensions.width20, bottom: Dimensions.height10),
-            child: Row(
-              children: [
-                Container(
-                  width: Dimensions.listViewImgSize,
-                  height: Dimensions.listViewTextContSize,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(Dimensions.radius20),
-                      color: Colors.white38,
-                      image: DecorationImage(
-                        fit: BoxFit.cover,
-                          image: AssetImage("assets/image/food0.png"))),
-                ),
-                // text container
-                Expanded(
-                  child: Container(
-                    height: Dimensions.listViewTextContSize,
-                    decoration: BoxDecoration(borderRadius: BorderRadius.only(topRight: Radius.circular(Dimensions.radius20),
-                    bottomRight: Radius.circular(Dimensions.radius20)),
-                    color: Colors.white),
-                    child: Padding(padding: EdgeInsets.only(left: Dimensions.width10, right: Dimensions.width10),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  mainAxisSize: MainAxisSize.min,
-                      children: [
-                        BigText(text: "Sparkling Drink From Ghana"),
-                        SizedBox(height: Dimensions.height10,),
-                        SmallText(text: "With a Ghanaian taste"),
-                        SizedBox(height: Dimensions.height10,),
-                         Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        IconAndText(
-                            icon: Icons.circle_sharp,
-                            text: "Normal",
-                            iconColor: AppColors.iconColor1),
-                        IconAndText(
-                            icon: Icons.location_on,
-                            text: "1.7",
-                            iconColor: AppColors.mainColor),
-                        IconAndText(
-                            icon: Icons.access_time_filled_rounded,
-                            text: "32mins",
-                            iconColor: AppColors.iconColor2),
-                      ],
-                    )
-                 
-                      ],
-                    ),),
-                  ),
-                ),
-              ],
-            ),
-          );
-        }),
-        )
       ],
     );
   }
