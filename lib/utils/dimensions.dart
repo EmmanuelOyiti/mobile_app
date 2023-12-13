@@ -9,6 +9,7 @@ class Dimensions {
   static double pageViewTextContainer = scrnHeight / 6.09;
 
 //margin and padding
+  static double height300 = scrnHeight / 15.5;
   static double height10 = scrnHeight / 73.1;
   static double height20 = scrnHeight / 36.55;
   static double height15 = scrnHeight / 48.7;

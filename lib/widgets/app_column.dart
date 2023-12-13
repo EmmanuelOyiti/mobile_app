@@ -34,11 +34,11 @@ class AppColumn extends StatelessWidget {
             ),
             SmallText(text: "4.7"),
             SizedBox(
-              width: Dimensions.width10,
+              width: Dimensions.width20,
             ),
             SmallText(text: "1008"),
             SizedBox(
-              width: Dimensions.width10,
+              width: Dimensions.width20,
             ),
             SmallText(text: "comments")
           ],
@@ -54,10 +54,16 @@ class AppColumn extends StatelessWidget {
                 icon: Icons.circle_sharp,
                 text: "Regular",
                 iconColor: Color(0xFFffd28d)),
+                SizedBox(
+              width: Dimensions.width20,
+            ),
             IconAndText(
                 icon: Icons.location_on,
                 text: "1.3k",
                 iconColor: Color(0xFF89dad0)),
+                SizedBox(
+              width: Dimensions.width20,
+            ),
             IconAndText(
                 icon: Icons.access_time_rounded,
                 text: "30mins",

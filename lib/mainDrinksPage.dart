@@ -16,10 +16,12 @@ class _MainDrinkPageState extends State<MainDrinkPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+   backgroundColor: Colors.white,
         body: Column(
-      children: [
+              children: [
         Container(
           child: Container(
+            color: Colors.white,
             margin: EdgeInsets.only(top: Dimensions.height30, bottom: Dimensions.height15),
             padding: EdgeInsets.only(left: Dimensions.width20, right: Dimensions.width20),
             child: Row(
@@ -54,10 +56,10 @@ class _MainDrinkPageState extends State<MainDrinkPage> {
           ),
         ),      
         Expanded(
-          child:SingleChildScrollView(
-            child:  DrinksPageBody(),
-          )),
+          child:DrinksPageBody()),
+        // DrinksPageBody()
         ],
-    ));
+            ),           
+            );
   }
 }

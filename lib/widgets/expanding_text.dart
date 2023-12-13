@@ -56,14 +56,14 @@ class _ExpandableTextState extends State<ExpandableText> {
                   style: TextStyle(
                     color: AppColors.paraColor,
                     fontSize: Dimensions.font16,
-                    height: 1.3,
+                    height: 1.5,
                   ),
                 ),
                 GestureDetector(
                   onTap:  onShowMoreTap,
                   child: Row(
                     children: [
-                      SmallText(text: "Show more", color: AppColors.mainColor),
+                      SmallText(text: "Show more", color: AppColors.mainColor,height: 1.5,),
                       Icon(
                         isTextLong
                             ? Icons.arrow_drop_down
